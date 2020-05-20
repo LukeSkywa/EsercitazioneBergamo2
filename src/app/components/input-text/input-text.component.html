@@ -1,5 +1,5 @@
 <div>
     <label for="input">{{label}}</label>
-    <input id="input" [value]="inputValue" (input)="setInputValue($event.target.value)"
+    <input #inputRef id="input" [value]="inputValue" (input)="setInputValue(inputRef.value)"
     (blur)="onTouched()">
 </div>
