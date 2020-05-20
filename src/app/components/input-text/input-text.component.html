@@ -1,4 +1,5 @@
-<div [formGroup]="parentForm">
+<div>
     <label for="input">{{label}}</label>
-    <input id="input" [formControlName]="controlName">
+    <input id="input" [value]="inputValue" (input)="setInputValue($event.target.value)"
+    (blur)="onTouched()">
 </div>

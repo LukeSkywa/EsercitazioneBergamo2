@@ -19,8 +19,8 @@ export class HomeComponent implements OnInit {
 
   constructor(private fb: FormBuilder) { 
     this.userForm = this.fb.group({
-      name: '',
-      surname: ''
+      name: 'nome',
+      surname: 'sdfdsf'
     })
   }
 
