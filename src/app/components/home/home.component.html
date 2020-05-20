@@ -4,9 +4,7 @@
 </div>
 
 <form [formGroup]="userForm" (ngSubmit)="addItem()">
-    <label for="name">Nome</label>
-    <input id="name" formControlName="name">
-    <label for="surname">Cognome</label>
-    <input id="surname" formControlName="surname">
+    <app-input-text [label]="'Nome'" [controlName]="'name'" [parentForm]="userForm"></app-input-text>
+    <app-input-text [label]="'Cognome'" [controlName]="'surname'" [parentForm]="userForm"></app-input-text>
     <button type="submit">Inserisci</button>
 </form>
