@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { User } from 'src/app/model/user.interface';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
@@ -7,9 +7,15 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
-
+export class HomeComponent implements OnInit, AfterViewInit {
+  showHideDemo = false;
+  demoTitle: string;
   userForm: FormGroup;
+
+  user: User = {
+    name: '',
+    surname: ''
+  }
 
   list: User[]= [
     {name: 'Luca', surname: 'Alicata'},
@@ -23,8 +29,12 @@ export class HomeComponent implements OnInit {
       surname: 'sdfdsf'
     })
   }
+  ngAfterViewInit(): void {
+    console.log('ngAfterViewInit HOME');
+  }
 
   ngOnInit(): void {
+    console.log('ngOnInit HOME');
   }
 
   trackList(index, item){
@@ -37,6 +47,9 @@ export class HomeComponent implements OnInit {
 
   addItem(){
     this.list.push(this.userForm.value)
+    this.user.name= this.userForm.get('name').value;
+    this.user.surname= this.userForm.get('surname').value;
+    // this.user = this.userForm.value;
   }
 
 }

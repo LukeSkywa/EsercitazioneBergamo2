@@ -1,10 +1,15 @@
-<div *ngFor="let item of list; let i = index; trackBy: trackList">
+<!-- <div *ngFor="let item of list; let i = index; trackBy: trackList">
     <span>{{item.name}}</span> - <span>{{item.surname}}</span>
     <button (click)="removeItem(i)">Rimuovi</button>
-</div>
+</div>-->
 
 <form [formGroup]="userForm" (ngSubmit)="addItem()">
     <app-input-text [label]="'Nome'" formControlName="name"></app-input-text>
     <app-input-text [label]="'Cognome'" formControlName="surname"></app-input-text>
     <button type="submit">Inserisci</button>
 </form>
+<input [(ngModel)]="demoTitle">
+
+<button (click)="showHideDemo = !showHideDemo">SHOW/HIDE DEMO</button>
+<app-demo *ngIf="showHideDemo" [title]="demoTitle" [user]="user"></app-demo>
+
