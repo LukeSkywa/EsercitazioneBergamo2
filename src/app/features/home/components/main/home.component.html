@@ -1,3 +1,5 @@
+<p routerLink="/home/carosello">Vedi Carosello</p>
+
 
 <form [formGroup]="userForm" (ngSubmit)="addItem()">
     <!-- <app-input-text [label]="'Nome'" formControlName="name"></app-input-text> -->
@@ -8,5 +10,5 @@
 
 <button (click)="showHideDemo = !showHideDemo">SHOW/HIDE DEMO</button>
 
-<app-corosello></app-corosello>
+<router-outlet></router-outlet>
 
