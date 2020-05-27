@@ -2,8 +2,8 @@
 
 
 <form [formGroup]="userForm" (ngSubmit)="addItem()">
-    <!-- <app-input-text [label]="'Nome'" formControlName="name"></app-input-text> -->
-    <!-- <app-input-text [label]="'Cognome'" formControlName="surname"></app-input-text> -->
+    <app-input-text [label]="'Nome'" formControlName="name"></app-input-text>
+    <app-input-text [label]="'Cognome'" formControlName="surname"></app-input-text>
     <button type="submit">Inserisci</button>
 </form>
 <input [(ngModel)]="demoTitle">

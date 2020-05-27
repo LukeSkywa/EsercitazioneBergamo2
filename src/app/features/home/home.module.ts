@@ -5,15 +5,14 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './components/main/home.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { CoroselloComponent } from './components/corosello/corosello.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
   declarations: [HomeComponent, CoroselloComponent],
   imports: [
-    CommonModule,
     HomeRoutingModule,
-    ReactiveFormsModule,
-    FormsModule
+    SharedModule
   ]
 })
 export class HomeModule { }
