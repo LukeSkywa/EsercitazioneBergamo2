@@ -1,5 +1,5 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { User } from 'src/app/model/user.interface';
+import { User } from 'src/app/core/model/user.interface';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({

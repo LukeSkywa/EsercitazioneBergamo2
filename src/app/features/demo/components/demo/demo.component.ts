@@ -1,5 +1,5 @@
 import { Component, OnInit, OnChanges, OnDestroy, SimpleChanges, Input, DoCheck, AfterViewInit } from '@angular/core';
-import { User } from 'src/app/model/user.interface';
+import { User } from 'src/app/core/model/user.interface';
 
 @Component({
   selector: 'app-demo',
