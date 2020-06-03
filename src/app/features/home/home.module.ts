@@ -9,7 +9,6 @@ import { SharedModule } from 'src/app/shared/shared.module';
   imports: [
     SharedModule,
     HomeRoutingModule
-  ],
-  exports: [HomeComponent]
+  ]
 })
 export class HomeModule { }
