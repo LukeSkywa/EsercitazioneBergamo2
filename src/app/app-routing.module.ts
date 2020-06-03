@@ -1,17 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { LoginGuardService } from './core/guards/login-guard.service';
 
 
 const routes: Routes = [
-  {
-    path: 'home',
-    loadChildren: () => import('./features/home/home.module').then(m => m.HomeModule)
-  },
-  {
-    path: 'demo',
-    loadChildren: () => import('./features/demo/demo.module').then(m => m.DemoModule)
-  },
-  { path: '', redirectTo: '/home', pathMatch: 'full' }
+  { path: 'home', loadChildren: () => import('./features/home/home.module').then(m => m.HomeModule), canLoad: [LoginGuardService] },
+  { path: 'login', loadChildren: () => import('./features/login/login.module').then(m => m.LoginModule) },
+  { path: '', redirectTo: '/login', pathMatch: 'full' }
 ];
 
 @NgModule({

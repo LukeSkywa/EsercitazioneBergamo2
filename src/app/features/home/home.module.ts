@@ -1,14 +1,13 @@
 import { NgModule } from '@angular/core';
-import { HomeComponent } from './components/home/home.component';
-import { SharedModule } from 'src/app/shared/shared.module';
-import { ReactiveFormsModule } from '@angular/forms';
 import { HomeRoutingModule } from './home-routing.module';
+import { CoroselloComponent } from './components/corosello/corosello.component';
+import { HomeComponent } from './components/main/home.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
-  declarations: [HomeComponent],
+  declarations: [HomeComponent, CoroselloComponent],
   imports: [
     SharedModule,
-    ReactiveFormsModule,
     HomeRoutingModule
   ],
   exports: [HomeComponent]
