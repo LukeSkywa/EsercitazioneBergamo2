@@ -26,6 +26,7 @@ export class TodosFacadeService {
     this.todosServerService.updateTodo(todo).subscribe(() => {
       this.getAllTodos();
       this.getTodoById(todo.id);
+      this.goToDetail(todo.id);
     });
   }
 

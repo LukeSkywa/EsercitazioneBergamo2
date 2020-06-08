@@ -18,6 +18,6 @@ export class TodosServerService {
   }
 
   updateTodo(todo: Todo): Observable<Todo[]>{
-    return this.httpCommunications.retrievePostCall("todos", todo);
+    return this.httpCommunications.retrievePutCall("todos/"+todo.id, todo);
   }
 }
