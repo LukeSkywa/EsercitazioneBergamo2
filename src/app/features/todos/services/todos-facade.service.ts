@@ -17,6 +17,7 @@ export class TodosFacadeService {
   constructor(private todosServerService: TodosServerService, private router: Router) { }
 
   getAllTodos() {
+
     this.todosServerService.retrieveAllTodos().subscribe(todos => {
       this.todsSubject.next(todos);
     });
@@ -25,7 +26,6 @@ export class TodosFacadeService {
   editTodo(todo: Todo) {
     this.todosServerService.updateTodo(todo).subscribe(() => {
       this.getAllTodos();
-      this.getTodoById(todo.id);
       this.goToDetail(todo.id);
     });
   }
