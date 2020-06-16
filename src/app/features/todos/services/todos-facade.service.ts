@@ -1,8 +1,7 @@
 import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
-import { TodosModule } from '../todos.module';
 import { TodosServerService } from 'src/app/core/services/todos-server.service';
-import { Observable, of, Subject, BehaviorSubject } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import { Todo } from 'src/app/core/model/todo.interface';
 
 @Injectable()
@@ -30,10 +29,21 @@ export class TodosFacadeService {
     });
   }
 
+  addTodo(todo: Todo) {
+    this.todosServerService.insertTodo(todo).subscribe(() => {
+      this.getAllTodos();
+      this.goToTodosHome();
+    });
+  }
+
   getTodoById(id: number) {
     this.todosServerService.retrieveTodoById(id).subscribe(todo => {
       this.todSelectedSubject.next(todo);
     });
+  }
+
+  goToTodosHome() {
+    this.router.navigateByUrl('/todos');
   }
 
   goToDetail(id: number) {
