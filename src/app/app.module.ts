@@ -15,7 +15,7 @@ import { reducer } from './redux/todos/todos.reducers';
     BrowserModule,
     AppRoutingModule,
     CoreModule,
-    StoreModule.forRoot({ todos: reducer })
+    StoreModule.forRoot({ todoState: reducer })
   ],
   providers: [],
   bootstrap: [AppComponent]
