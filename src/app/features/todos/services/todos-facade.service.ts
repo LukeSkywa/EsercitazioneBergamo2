@@ -11,12 +11,6 @@ export class TodosFacadeService {
   constructor(private todosServerService: TodosServerService, private router: Router,
     private store: Store) { }
 
-  getAllTodos() {
-    this.todosServerService.retrieveAllTodos().subscribe(todos => {
-      this.store.dispatch(initTodos({todos}));
-    });
-  }
-
   editTodo(todo: Todo) {
     this.todosServerService.updateTodo(todo).subscribe((item: Todo) => {
       this.store.dispatch(editTodo({todo: item}));
