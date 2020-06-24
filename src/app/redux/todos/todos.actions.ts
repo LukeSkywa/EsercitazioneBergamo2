@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { Todo } from '../core/model/todo.interface';
+import { Todo } from '../../core/model/todo.interface';
 
 export const initTodos = createAction('[Todos] init', props<{todos: Todo[]}>());
 export const insertTodo = createAction('[Todos] insert', props<{todo: Todo}>());

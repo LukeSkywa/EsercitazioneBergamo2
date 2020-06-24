@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { StoreModule } from '@ngrx/store';
-import { reducer } from './redux/todos.reducers';
+import { reducer } from './redux/todos/todos.reducers';
 
 @NgModule({
   declarations: [
