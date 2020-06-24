@@ -3,7 +3,6 @@ import { Store } from '@ngrx/store';
 import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
 import { TodosServerService } from 'src/app/core/services/todos-server.service';
-import { BehaviorSubject } from 'rxjs';
 import { Todo } from 'src/app/core/model/todo.interface';
 
 @Injectable()
