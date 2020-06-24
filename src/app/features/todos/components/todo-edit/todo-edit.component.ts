@@ -1,8 +1,7 @@
 import { TodosFacadeService } from './../../services/todos-facade.service';
-import { Component, OnInit, Input, OnDestroy } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Todo } from 'src/app/core/model/todo.interface';
-import { Observable, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 import { Store, select } from '@ngrx/store';
 import { getTodoById } from 'src/app/redux';
@@ -23,10 +22,11 @@ export class TodoEditComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.subscription.add(this.route.params.pipe(
       filter(params => params != null && params['id'] != null),
-      switchMap(params => this.store.pipe(select(getTodoById, { id: Number(params['id']) }))),
+      switchMap(params => this.store.pipe(select(getTodoById, { id: Number(params['id']) })))
     ).subscribe(todo => {
       this.todo = todo;
     }));
+    
   }
 
   ngOnDestroy(): void {
