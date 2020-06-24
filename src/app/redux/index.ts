@@ -11,3 +11,8 @@ export const selectTodos = createSelector(
     selectTodosState,
     (state: TodoState) => state.todos
 );
+
+export const getTodoById = createSelector(
+    selectTodosState,
+    (state: TodoState, props: { id: number }) => state.todos.find(item => item.id === props.id)
+);
