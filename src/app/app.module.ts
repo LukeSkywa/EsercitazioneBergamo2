@@ -1,3 +1,5 @@
+import { environment } from './../environments/environment.prod';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -15,7 +17,11 @@ import { reducer } from './redux/todos/todos.reducers';
     BrowserModule,
     AppRoutingModule,
     CoreModule,
-    StoreModule.forRoot({ todoState: reducer })
+    StoreModule.forRoot({ todoState: reducer }),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25, // Retains last 25 states
+      logOnly: environment.production, // Restrict extension to log-only mode
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
