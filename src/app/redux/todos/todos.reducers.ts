@@ -19,6 +19,6 @@ const todosReducerFun = createReducer(
     on(editTodo, (state, { todo }) => ({ ...state, todos: state.todos.map(item => item.id === todo.id ? todo : item) }))
 );
 
-export function todosReducer(state: TodoState | undefined, action: Action) {
+export function todoReducer(state: TodoState | undefined, action: Action) {
     return todosReducerFun(state, action);
 }
