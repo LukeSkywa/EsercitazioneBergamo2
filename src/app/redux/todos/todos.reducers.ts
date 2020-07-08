@@ -4,13 +4,14 @@ import { initTodos, insertTodo, removeTodo, editTodo } from './todos.actions';
 
 export interface TodoState {
     todos: Todo[];
+    
 }
 
 export const initialState: TodoState = {
     todos: []
 };
 
-const todosReducer = createReducer(
+const todosReducerFun = createReducer(
     initialState,
     on(initTodos, (state, { todos }) => ({ ...state, todos: todos })),
     on(insertTodo, (state, { todo }) => ({ ...state, todos: [...state.todos, todo] })),
@@ -18,6 +19,6 @@ const todosReducer = createReducer(
     on(editTodo, (state, { todo }) => ({ ...state, todos: state.todos.map(item => item.id === todo.id ? todo : item) }))
 );
 
-export function reducer(state: TodoState | undefined, action: Action) {
-    return todosReducer(state, action);
+export function todosReducer(state: TodoState | undefined, action: Action) {
+    return todosReducerFun(state, action);
 }

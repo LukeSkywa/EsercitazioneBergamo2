@@ -7,7 +7,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { StoreModule } from '@ngrx/store';
-import { reducer } from './redux/todos/todos.reducers';
+import { todosReducer } from './redux/todos/todos.reducers';
+import { usersReducer } from './redux/users/users.reducers';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import { reducer } from './redux/todos/todos.reducers';
     BrowserModule,
     AppRoutingModule,
     CoreModule,
-    StoreModule.forRoot({ todoState: reducer }),
+    StoreModule.forRoot({ todoState: todosReducer, usersState: usersReducer }),
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states
       logOnly: environment.production, // Restrict extension to log-only mode
