@@ -1,34 +1,56 @@
 {
-    "users": [{
-        "id": 0,
-        "username": "LukeSkywa",
-        "name": "Luca",
-        "surname": "Alicata"
-    }],
-    "todos": [{
-        "id": 0,
-        "title": "Lezione 10/06/2020",
-        "description": "Lezione accademia Bergamo, corso Angular avanzato",
-        "steps": [{
-                "id": 0,
-                "done": false,
-                "title": "Appello"
-            },
-            {
-                "id": 1,
-                "done": false,
-                "title": "Ripassp"
-            },
-            {
-                "id": 2,
-                "done": false,
-                "title": "Teoria"
-            },
-            {
-                "id": 3,
-                "done": false,
-                "title": "Pratica"
-            }
-        ]
-    }]
+  "users": [
+    {
+      "id": 0,
+      "username": "LukeSkywa",
+      "name": "Luca",
+      "surname": "Alicata"
+    }
+  ],
+  "todos": [
+    {
+      "id": 0,
+      "title": "Lezione 10/06/2020",
+      "description": "Lezione accademia Bergamo, corso Angular avanzato",
+      "steps": [
+        {
+          "id": 0,
+          "done": true,
+          "title": "Appello"
+        },
+        {
+          "id": 1,
+          "done": true,
+          "title": "Ripasgfhgfh"
+        },
+        {
+          "id": 3,
+          "done": false,
+          "title": "Pratica"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "title": "ciao",
+      "description": "descrizione",
+      "steps": [
+        {
+          "done": false,
+          "title": "rrre"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "dsfds",
+      "description": "sdfdsf",
+      "steps": [
+        {
+          "done": false,
+          "title": "dfdfds"
+        }
+      ]
+    }
+  ]
 }

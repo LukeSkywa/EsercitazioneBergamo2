@@ -9,10 +9,6 @@ export class TodosServerService {
 
   constructor(private httpCommunications: HttpCommunicationsService) { }
 
-  retrieveAllTodos(): Observable<Todo[]>{
-    return this.httpCommunications.retrieveGetCall<Todo[]>("todos");
-  }
-
   retrieveTodoById(id: number): Observable<Todo>{
     return this.httpCommunications.retrieveGetCall<Todo>("todos/"+id);
   }
