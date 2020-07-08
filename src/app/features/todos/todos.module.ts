@@ -1,3 +1,4 @@
+import { EffectsModule } from '@ngrx/effects';
 import { NgModule } from '@angular/core';
 
 import { TodosRoutingModule } from './todos-routing.module';
@@ -7,6 +8,7 @@ import { TodoDetailComponent } from './components/todo-detail/todo-detail.compon
 import { TodoEditComponent } from './components/todo-edit/todo-edit.component';
 import { TodosFacadeService } from './services/todos-facade.service';
 import { TodoAddComponent } from './components/todo-add/todo-add.component';
+import { TodosNavigationEffects } from './redux/todos-navigation.effects';
 
 
 @NgModule({
@@ -14,6 +16,7 @@ import { TodoAddComponent } from './components/todo-add/todo-add.component';
   providers: [TodosFacadeService],
   imports: [
     SharedModule,
+    EffectsModule.forFeature([TodosNavigationEffects]),
     TodosRoutingModule
   ]
 })
