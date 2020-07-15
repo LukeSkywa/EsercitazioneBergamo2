@@ -1,56 +1,78 @@
 {
-  "users": [
-    {
-      "id": 0,
-      "username": "LukeSkywa",
-      "name": "Luca",
-      "surname": "Alicata"
-    }
-  ],
-  "todos": [
-    {
-      "id": 0,
-      "title": "Lezione 10/06/2020",
-      "description": "Lezione accademia Bergamo, corso Angular avanzato",
-      "steps": [
-        {
-          "id": 0,
-          "done": true,
-          "title": "Appello"
+    "users": [{
+            "id": 0,
+            "username": "LukeSkywa",
+            "name": "Luca",
+            "surname": "Alicata"
         },
         {
-          "id": 1,
-          "done": true,
-          "title": "Ripasgfhgfh"
+            "id": 1,
+            "username": "RedMar",
+            "name": "Mario",
+            "surname": "Rossi"
+        }
+    ],
+    "todos": [{
+            "id": 0,
+            "title": "Lezione 10/06/2020",
+            "description": "Lezione accademia Bergamo, corso Angular avanzato",
+            "users": [
+                "LukeSkywa"
+            ],
+            "steps": [{
+                    "id": 0,
+                    "done": true,
+                    "title": "Appello"
+                },
+                {
+                    "id": 1,
+                    "done": true,
+                    "title": "Ripasso"
+                },
+                {
+                    "id": 3,
+                    "done": false,
+                    "title": "Pratica"
+                },
+                {
+                    "id": null,
+                    "done": false,
+                    "title": "xxcv"
+                }
+            ]
         },
         {
-          "id": 3,
-          "done": false,
-          "title": "Pratica"
-        }
-      ]
-    },
-    {
-      "id": 1,
-      "title": "ciao",
-      "description": "descrizione",
-      "steps": [
+            "id": 2,
+            "title": "dsfds",
+            "description": "sdfdsf",
+            "users": [
+                "RedMar"
+            ],
+            "steps": [{
+                "done": false,
+                "title": "dfdfds"
+            }]
+        },
         {
-          "done": false,
-          "title": "rrre"
+            "id": 3,
+            "title": "Spiegare withLatestFrom",
+            "description": "agganciando l'user",
+            "steps": [{
+                    "done": false,
+                    "title": "spiegazione"
+                },
+                {
+                    "done": false,
+                    "title": "dubbi"
+                },
+                {
+                    "done": false,
+                    "title": "pausa"
+                }
+            ],
+            "users": [
+                "LukeSkywa"
+            ]
         }
-      ]
-    },
-    {
-      "id": 2,
-      "title": "dsfds",
-      "description": "sdfdsf",
-      "steps": [
-        {
-          "done": false,
-          "title": "dfdfds"
-        }
-      ]
-    }
-  ]
+    ]
 }
