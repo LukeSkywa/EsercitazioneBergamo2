@@ -1,6 +1,6 @@
 import { TodoState } from './todos.reducers';
 import { createSelector } from '@ngrx/store';
-import { AppState } from '..';
+import { AppState, selectRouteParams } from '..';
 
 export const selectTodosState = (state: AppState) => state.todoState;
 export const selectTodos = createSelector(
@@ -10,7 +10,8 @@ export const selectTodos = createSelector(
 
 export const getTodoById = createSelector(
     selectTodosState,
-    (state: TodoState, props: { id: number }) => state.todos.find(item => item.id === props.id)
+    selectRouteParams,
+    (state: TodoState, params) => !!params['id'] ? state.todos.find(item => item.id === Number(params['id'])) : null
 );
 
 export const getFirstTodo = createSelector(

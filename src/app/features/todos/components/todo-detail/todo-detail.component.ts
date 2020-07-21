@@ -2,7 +2,7 @@ import { Store, select } from '@ngrx/store';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { TodosFacadeService } from '../../services/todos-facade.service';
 import { ActivatedRoute } from '@angular/router';
-import { Observable, of, Subscription } from 'rxjs';
+import { Subscription, Observable } from 'rxjs';
 import { Todo } from 'src/app/core/model/todo.interface';
 import { filter, mergeMap, switchMap } from 'rxjs/operators';
 import { getTodoById } from 'src/app/redux/todos';
@@ -12,25 +12,13 @@ import { getTodoById } from 'src/app/redux/todos';
   templateUrl: './todo-detail.component.html',
   styleUrls: ['./todo-detail.component.scss']
 })
-export class TodoDetailComponent implements OnInit, OnDestroy {
+export class TodoDetailComponent {
 
-  private subscription: Subscription = new Subscription();
-  todo: Todo;
-
-  constructor(private todosFacadeService: TodosFacadeService, private route: ActivatedRoute, private store: Store) {
+  get todo(): Observable<Todo>{
+    return this.store.pipe(select(getTodoById));
   }
 
-  ngOnInit(): void {
-    this.subscription.add(this.route.params.pipe(
-      filter(params => params != null && params['id'] != null),
-      switchMap(params => this.store.pipe(select(getTodoById, { id: Number(params['id']) }))),
-    ).subscribe(todo => {
-      this.todo = todo;
-    }));
-  }
-
-  ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+  constructor(private todosFacadeService: TodosFacadeService, private store: Store) {
   }
 
   edit(todo: Todo) {
