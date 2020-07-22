@@ -6,7 +6,7 @@ import { tap } from 'rxjs/operators';
 
 @Injectable()
 export class TodosNavigationEffects {
-
+    
     goToDetail$ = createEffect(() => this.actions$.pipe(
         ofType(goToDetail),
         tap(action => {

@@ -1,7 +1,8 @@
 import { TodoState } from './todos.reducers';
 import { createSelector } from '@ngrx/store';
-import { AppState, selectRouteParams } from '..';
+import { AppState } from '..';
 import { Params } from '@angular/router';
+import { selectRouteParams } from '../router';
 
 export const selectTodosState = (state: AppState) => state.todoState;
 export const selectTodos = createSelector(
