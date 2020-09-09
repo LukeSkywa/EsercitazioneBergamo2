@@ -1,18 +1,19 @@
 import { TodoStep } from './../../../core/model/todo-step.interface';
-import { Component, OnInit, Input, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnChanges, SimpleChanges, ChangeDetectionStrategy } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
 import { Todo } from 'src/app/core/model/todo.interface';
 
 @Component({
   selector: 'app-todo-form',
   templateUrl: './todo-form.component.html',
-  styleUrls: ['./todo-form.component.scss']
+  styleUrls: ['./todo-form.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TodoFormComponent implements OnChanges {
 
   @Input()
   todo: Todo;
-
+  
   @Output()
   formSubmitEvent: EventEmitter<Todo> = new EventEmitter();
 
